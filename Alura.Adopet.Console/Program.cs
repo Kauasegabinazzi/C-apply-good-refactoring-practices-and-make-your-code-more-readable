@@ -5,16 +5,20 @@ using Alura.Adopet.Console;
 // cria instância de HttpClient para consumir API Adopet
 HttpClient client = ConfiguraHttpClient("http://localhost:5057");
 Console.ForegroundColor = ConsoleColor.Green;
+
+string command = args[0].Trim();
+string importPath = args[1];
+
 try
 {
     // args[0] é o comando a ser executado pelo programa
-    switch (args[0].Trim())
+    switch (command)
     {
         case "import":
             List<Pet> listaDePet = new List<Pet>();
 
             // args[1] é o caminho do arquivo a ser importado
-            using (StreamReader sr = new StreamReader(args[1]))
+            using (StreamReader sr = new StreamReader(importPath))
             {
                 while (!sr.EndOfStream)
                 {
@@ -60,21 +64,28 @@ try
             // exibe o help daquele comando específico
             else if (args.Length == 2)
             {
-                if (args[1].Equals("import"))
+                string showCommand = args[1];
+                if (showCommand.Equals("import"))
                 {
                     Console.WriteLine(" adopet import <arquivo> " +
                         "comando que realiza a importação do arquivo de pets.");
                 }
-                if (args[1].Equals("show"))
+                if (showCommand.Equals("show"))
                 {
                     Console.WriteLine(" adopet show <arquivo>  comando que " +
+                        "exibe no terminal o conteúdo do arquivo importado.");
+                }
+                if (showCommand.Equals("list"))
+                {
+                    Console.WriteLine(" adopet list <arquivo>  comando que " +
                         "exibe no terminal o conteúdo do arquivo importado.");
                 }
             }
             break;
         case "show":
             // args[1] é o caminho do arquivo a ser exibido
-            using (StreamReader sr = new StreamReader(args[1]))
+            string showPathCommand = args[1];
+            using (StreamReader sr = new StreamReader(showPathCommand))
             {
                 Console.WriteLine("----- Serão importados os dados abaixo -----");
                 while (!sr.EndOfStream)
