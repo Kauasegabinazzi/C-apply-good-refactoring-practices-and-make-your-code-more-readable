@@ -15,37 +15,8 @@ try
     switch (command)
     {
         case "import":
-            List<Pet> listaDePet = new List<Pet>();
-
-            // args[1] é o caminho do arquivo a ser importado
-            using (StreamReader sr = new StreamReader(importPath))
-            {
-                while (!sr.EndOfStream)
-                {
-                    // separa linha usando ponto e vírgula
-                    string[] propriedades = sr.ReadLine().Split(';');
-                    // cria objeto Pet a partir da separação
-                    Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                      propriedades[1],
-                      TipoPet.Cachorro
-                     );
-
-                    Console.WriteLine(pet);
-                    listaDePet.Add(pet);
-                }
-            }
-            foreach (var pet in listaDePet)
-            {
-                try
-                {
-                    var resposta = await CreatePetAsync(pet);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-            Console.WriteLine("Importação concluída!");
+            var import = new Import();
+            await import.ImportFilePetAsync(path: args[1]);
             break;
         case "help":
             Console.WriteLine("Lista de comandos.");
@@ -133,15 +104,6 @@ HttpClient ConfiguraHttpClient(string url)
         new MediaTypeWithQualityHeaderValue("application/json"));
     _client.BaseAddress = new Uri(url);
     return _client;
-}
-
-Task<HttpResponseMessage> CreatePetAsync(Pet pet)
-{
-    HttpResponseMessage? response = null;
-    using (response = new HttpResponseMessage())
-    {
-        return client.PostAsJsonAsync("pet/add", pet);
-    }
 }
 
 async Task<IEnumerable<Pet>?> ListPetsAsync()

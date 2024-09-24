@@ -15,7 +15,7 @@ public class Estudante
     public int Idade { get; set; }
     public string Matricula { get; set; }
 
-    public void ImprimirDados(string nome, int idade, string matricula)
+    public void ImprimirDados(string nome = "", int idade = 0, string matricula = "")
     {
         Console.WriteLine("Nome: " + nome);
         Console.WriteLine("Idade: " + (idade));
