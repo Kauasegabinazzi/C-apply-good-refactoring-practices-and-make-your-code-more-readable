@@ -27,11 +27,8 @@ try
             show.showImport(args: args[1]);
             break;
         case "list":
-            var pets = await ListPetsAsync();
-            foreach (var pet in pets)
-            {
-                Console.WriteLine(pet);
-            }
+            var pets = new list();
+            await pets.ListaDadosPetsDaAPIAsync();
             break;
         default:
             // exibe mensagem de comando inválido

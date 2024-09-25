@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alura.Adopet.Console
 {
+    [CommandDoc(instruction: "list", documentation: "adopet list comando que exibe no terminal o conteúdo cadastrado na base de dados da AdoPet.\" + \"\\n\"")]
     internal class list
     {
         public async Task ListaDadosPetsDaAPIAsync()

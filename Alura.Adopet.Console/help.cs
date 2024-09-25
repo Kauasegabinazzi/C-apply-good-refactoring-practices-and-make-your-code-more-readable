@@ -1,5 +1,6 @@
 ﻿namespace Alura.Adopet.Console;
 
+[CommandDoc(instruction: "help", documentation: "adopet help comando que exibe informações da ajuda.")]
 internal class help
 {
     public void ShowHelpList(string path)
@@ -13,9 +14,11 @@ internal class help
             System.Console.WriteLine("Adopet (1.0) - Aplicativo de linha de comando (CLI).");
             System.Console.WriteLine("Realiza a importação em lote de um arquivos de pets.");
             System.Console.WriteLine("Comando possíveis: ");
+            System.Console.WriteLine($" adopet help comando que exibe informações da ajuda.");
             System.Console.WriteLine($" adopet import <arquivo> comando que realiza a importação do arquivo de pets.");
             System.Console.WriteLine($" adopet show   <arquivo> comando que exibe no terminal o conteúdo do arquivo importado." + "\n\n\n\n");
             System.Console.WriteLine("Execute 'adopet.exe help [comando]' para obter mais informações sobre um comando." + "\n\n\n");
+            System.Console.WriteLine($" adopet list comando que exibe no terminal o conteúdo cadastrado na base de dados da AdoPet." + "\n");
         }
         // exibe o help daquele comando específico
         else if (path.Length == 2)
