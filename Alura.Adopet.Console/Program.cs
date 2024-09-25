@@ -20,11 +20,11 @@ try
             break;
         case "help":
             var help = new help();
-            help.ShowHelpList(path: args[1], args: args);
+            help.ShowHelpList(path: args[1]);
             break;
         case "show":
             var show = new show();
-            show.showImport(args: args);
+            show.showImport(args: args[1]);
             break;
         case "list":
             var pets = await ListPetsAsync();

@@ -8,11 +8,11 @@ namespace Alura.Adopet.Console
 {
     internal class show
     {
-        public void showImport(string[] args)
+        public void showImport(string args)
         {
             // args[1] é o caminho do arquivo a ser exibido
-            string showPathCommand = args[1];
-            using (StreamReader sr = new StreamReader(showPathCommand))
+
+            using (StreamReader sr = new StreamReader(args))
             {
                 System.Console.WriteLine("----- Serão importados os dados abaixo -----");
                 while (!sr.EndOfStream)

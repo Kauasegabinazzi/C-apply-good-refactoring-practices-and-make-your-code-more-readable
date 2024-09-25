@@ -2,7 +2,7 @@
 
 internal class help
 {
-    public void ShowHelpList(string path, string[] args)
+    public void ShowHelpList(string path)
     {
         System.Console.WriteLine("Lista de comandos.");
         // se não passou mais nenhum argumento mostra help de todos os comandos
@@ -20,18 +20,17 @@ internal class help
         // exibe o help daquele comando específico
         else if (path.Length == 2)
         {
-            string showCommand = args[1];
-            if (showCommand.Equals("import"))
+            if (path.Equals("import"))
             {
                 System.Console.WriteLine(" adopet import <arquivo> " +
                     "comando que realiza a importação do arquivo de pets.");
             }
-            if (showCommand.Equals("show"))
+            if (path.Equals("show"))
             {
                 System.Console.WriteLine(" adopet show <arquivo>  comando que " +
                     "exibe no terminal o conteúdo do arquivo importado.");
             }
-            if (showCommand.Equals("list"))
+            if (path.Equals("list"))
             {
                 System.Console.WriteLine(" adopet list <arquivo>  comando que " +
                     "exibe no terminal o conteúdo do arquivo importado.");
