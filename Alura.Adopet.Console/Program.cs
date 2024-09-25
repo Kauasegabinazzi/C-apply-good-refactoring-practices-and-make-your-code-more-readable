@@ -21,26 +21,10 @@ try
         case "help":
             var help = new help();
             help.ShowHelpList(path: args[1], args: args);
-
             break;
         case "show":
-            // args[1] é o caminho do arquivo a ser exibido
-            string showPathCommand = args[1];
-            using (StreamReader sr = new StreamReader(showPathCommand))
-            {
-                Console.WriteLine("----- Serão importados os dados abaixo -----");
-                while (!sr.EndOfStream)
-                {
-                    // separa linha usando ponto e vírgula
-                    string[] propriedades = sr.ReadLine().Split(';');
-                    // cria objeto Pet a partir da separação
-                    Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                    propriedades[1],
-                    TipoPet.Cachorro
-                    );
-                    Console.WriteLine(pet);
-                }
-            }
+            var show = new show();
+            show.showImport(args: args);
             break;
         case "list":
             var pets = await ListPetsAsync();
