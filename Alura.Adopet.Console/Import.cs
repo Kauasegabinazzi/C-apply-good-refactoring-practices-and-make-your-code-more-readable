@@ -23,25 +23,12 @@ internal class Import
 
         List<Pet> listaDePet = new List<Pet>();
 
-        // args[1] é o caminho do arquivo a ser importado
-        using (StreamReader sr = new StreamReader(path))
-        {
-            while (!sr.EndOfStream)
-            {
-                // separa linha usando ponto e vírgula
-                string[] propriedades = sr.ReadLine().Split(';');
-                // cria objeto Pet a partir da separação
-                Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                  propriedades[1],
-                  TipoPet.Cachorro
-                 );
+        readFile read = new readFile();
+        listaDePet = read.read(path);
 
-                System.Console.WriteLine(pet);
-                listaDePet.Add(pet);
-            }
-        }
         foreach (var pet in listaDePet)
         {
+            System.Console.WriteLine(pet);
             try
             {
                 var resposta = await CreatePetAsync(pet);

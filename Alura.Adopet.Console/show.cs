@@ -10,22 +10,11 @@ namespace Alura.Adopet.Console
     {
         public void showImport(string args)
         {
-            // args[1] é o caminho do arquivo a ser exibido
+            readFile read = new readFile();
+            var list = read.read(args);
 
-            using (StreamReader sr = new StreamReader(args))
-            {
-                System.Console.WriteLine("----- Serão importados os dados abaixo -----");
-                while (!sr.EndOfStream)
-                {
-                    // separa linha usando ponto e vírgula
-                    string[] propriedades = sr.ReadLine().Split(';');
-                    // cria objeto Pet a partir da separação
-                    Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                    propriedades[1],
-                    TipoPet.Cachorro
-                    );
-                    System.Console.WriteLine(pet);
-                }
+            foreach (var item in list) {
+                System.Console.WriteLine(item);
             }
         }
     }
