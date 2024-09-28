@@ -20,7 +20,7 @@ try
             break;
         case "help":
             var help = new help();
-            help.ShowHelpList(path: args[1]);
+            help.ShowHelpList(path: args);
             break;
         case "show":
             var show = new show();
