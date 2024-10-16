@@ -1,3 +1,5 @@
+using Alura.Adopet.Console;
+
 namespace Tests
 {
     public class Tests
@@ -10,7 +12,9 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            var clientPet = new HttpClientPet();
+
+            //Assert.Pass();
         }
     }
 }
