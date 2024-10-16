@@ -19,7 +19,7 @@ try
             await import.ImportFilePetAsync(path: args[1]);
             break;
         case "help":
-            var help = new help();
+            var help = new Help();
             help.ShowHelpList(path: args);
             break;
         case "show":

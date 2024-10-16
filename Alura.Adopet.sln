@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alura.Adopet.Console", "Alu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "challenges", "challenges\challenges\challenges.csproj", "{CDB64C1C-2EEF-4865-BF79-02317A4823DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{BA647B19-7769-4331-AB8A-04116927F390}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CDB64C1C-2EEF-4865-BF79-02317A4823DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB64C1C-2EEF-4865-BF79-02317A4823DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB64C1C-2EEF-4865-BF79-02317A4823DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA647B19-7769-4331-AB8A-04116927F390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA647B19-7769-4331-AB8A-04116927F390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA647B19-7769-4331-AB8A-04116927F390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA647B19-7769-4331-AB8A-04116927F390}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
