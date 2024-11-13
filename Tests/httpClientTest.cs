@@ -2,7 +2,7 @@ using Alura.Adopet.Console;
 
 namespace Tests
 {
-    public class Tests
+    public class httpClientTest
     {
         [SetUp]
         public void Setup()
@@ -10,11 +10,14 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public async Task ListNotEmpty()
         {
             var clientPet = new HttpClientPet();
 
             //Assert.Pass();
+
+            var list = await clientPet.ListPetsAsync();
+
         }
     }
 }
