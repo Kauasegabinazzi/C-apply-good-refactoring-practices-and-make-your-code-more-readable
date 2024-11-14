@@ -1,4 +1,5 @@
 using Alura.Adopet.Console;
+using Xunit;
 
 namespace Tests
 {
@@ -9,7 +10,7 @@ namespace Tests
         {
         }
 
-        [Test]
+        [Fact]
         public async Task ListNotEmpty()
         {
             var clientPet = new HttpClientPet();
@@ -17,6 +18,15 @@ namespace Tests
             //Assert.Pass();
 
             var list = await clientPet.ListPetsAsync();
+
+        }
+
+        [Fact]
+        public async Task Exceptions()
+        {
+            var clientPet = new HttpClientPet(uri: "http://localhost:1111");
+
+            await Xunit.Assert.ThrowsAsync<Exception>(() => clientPet.ListPetsAsync());
 
         }
     }
