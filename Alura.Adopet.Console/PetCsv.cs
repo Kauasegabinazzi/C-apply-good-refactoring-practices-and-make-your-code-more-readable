@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Alura.Adopet.Console
 {
-    public class PetCsv
+    public static class PetCsv
     {
-        public Pet ConvertString(string row)
+        public static Pet ConvertString(this string row)
         {
             // separa linha usando ponto e vírgula
             string[] propriedades = row.Split(';');
