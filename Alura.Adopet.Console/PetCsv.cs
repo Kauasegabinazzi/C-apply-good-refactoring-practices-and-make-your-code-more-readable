@@ -10,8 +10,11 @@ namespace Alura.Adopet.Console
     {
         public static Pet ConvertString(this string row)
         {
+            //if(row is null) throw new ArgumentNullException("não pode ser nullo");
+            
+            
             // separa linha usando ponto e vírgula
-            string[] propriedades = row.Split(';');
+            string[]? propriedades = row?.Split(';') ?? throw new ArgumentNullException("não pode ser nullo");
             // cria objeto Pet a partir da separação
             return new Pet(Guid.Parse(propriedades[0]),
             propriedades[1],

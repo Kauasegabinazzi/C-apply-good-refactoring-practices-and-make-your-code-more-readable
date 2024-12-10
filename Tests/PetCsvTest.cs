@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
 using NUnit.Framework;
 using Alura.Adopet.Console;
+using Xunit;
 
 namespace Tests
 {
@@ -24,6 +24,14 @@ namespace Tests
             //Asset
 
             NUnit.Framework.Legacy.ClassicAssert.NotNull(pet);
+        }
+
+        [Fact]
+        public void WhenNull()
+        {
+            string? row = null;
+
+            NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentNullException>(() => row.ConvertString());
         }
 
     }
