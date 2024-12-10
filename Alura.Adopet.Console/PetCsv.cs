@@ -15,6 +15,11 @@ namespace Alura.Adopet.Console
             
             // separa linha usando ponto e vírgula
             string[]? propriedades = row?.Split(';') ?? throw new ArgumentNullException("não pode ser nullo");
+            
+            if(string.IsNullOrEmpty(row)) throw new ArgumentException("não pode ser vazio");
+
+            if(propriedades.Length != 3) throw new ArgumentException("Texto invalido");
+
             // cria objeto Pet a partir da separação
             return new Pet(Guid.Parse(propriedades[0]),
             propriedades[1],

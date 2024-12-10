@@ -34,5 +34,21 @@ namespace Tests
             NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentNullException>(() => row.ConvertString());
         }
 
+        [Fact]
+        public void WhenStringEmpty()
+        {
+            string? row = string.Empty;
+
+            NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentException>(() => row.ConvertString());
+        }
+
+        [Fact]
+        public void WhenInsufficient()
+        {
+            string? row = "456b24f4-19e2-4423-845d-4a80e8854a41;Lima Limão";
+
+            NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentException>(() => row.ConvertString());
+        }
+
     }
 }
