@@ -50,5 +50,21 @@ namespace Tests
             NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentException>(() => row.ConvertString());
         }
 
+        [Fact]
+        public void WhenInvalid()
+        {
+            string? row = "hfjdhdsj1;Lima Limão;1";
+
+            NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentException>(() => row.ConvertString());
+        }
+
+        [Fact]
+        public void WhenTypeInvalid()
+        {
+            string? row = "456b24f4-19e2-4423-845d-4a80e8854a41;Lima Limão; 2";
+
+            NUnit.Framework.Legacy.ClassicAssert.Throws<ArgumentException>(() => row.ConvertString());
+        }
+
     }
 }
