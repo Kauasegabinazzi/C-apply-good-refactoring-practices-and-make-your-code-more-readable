@@ -20,9 +20,13 @@ namespace Tests
                 GetAssembly(typeof(CommandDoc))!;
 
             Dictionary<string, CommandDoc> dicionario =
-                DocumentationSystem.toDictionary(assemblyTypeDoc);
+                SystemDoc.toDictionary(assemblyTypeDoc);
 
             NUnit.Framework.Legacy.ClassicAssert.IsNotEmpty(dicionario);
+            NUnit.Framework.Legacy.ClassicAssert.NotNull(dicionario);
+            NUnit.Framework.Legacy.ClassicAssert
+                .Equals(4, dicionario.Count);
+
         }
     }
 }

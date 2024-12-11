@@ -12,10 +12,7 @@ internal class Help
 
     public Help()
     {
-        docs = Assembly.GetExecutingAssembly().GetTypes()
-         .Where(t => t.GetCustomAttributes<CommandDoc>().Any())
-         .Select(t => t.GetCustomAttribute<CommandDoc>()!)
-         .ToDictionary(d => d.Instruction);
+        docs = SystemDoc.toDictionary(Assembly.GetExecutingAssembly());
     }
 
     public Task ExecutarAsync(string[] args)
