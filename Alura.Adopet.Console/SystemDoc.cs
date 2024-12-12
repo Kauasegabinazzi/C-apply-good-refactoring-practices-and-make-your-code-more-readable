@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Alura.Adopet.Console.Comandos;
 
 namespace Alura.Adopet.Console
 {

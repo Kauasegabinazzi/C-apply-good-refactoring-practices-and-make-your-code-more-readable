@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Windows.Input;
 
-namespace Alura.Adopet.Console;
+namespace Alura.Adopet.Console.Comandos;
 
 [CommandDoc(instruction: "help",
  documentation: "adopet help comando que exibe informações da ajuda. \n" +
@@ -17,7 +17,7 @@ internal class Help
 
     public Task ExecutarAsync(string[] args)
     {
-        this.ShowHelpList(path: args);
+        ShowHelpList(path: args);
         return Task.CompletedTask;
     }
 

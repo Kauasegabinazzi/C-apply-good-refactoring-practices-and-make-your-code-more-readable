@@ -6,7 +6,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alura.Adopet.Console;
+namespace Alura.Adopet.Console.Comandos;
 
 [CommandDoc(instruction: "import", documentation: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]
 
