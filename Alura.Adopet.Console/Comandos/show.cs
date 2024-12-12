@@ -12,10 +12,11 @@ namespace Alura.Adopet.Console.Comandos
     {
         public Task ExeCutionAsync(string[] args)
         {
-            throw new NotImplementedException();
+            this.showImport(args: args[1]);
+            return Task.CompletedTask;
         }
 
-        public void showImport(string args)
+        private void showImport(string args)
         {
             readFile read = new readFile();
             var list = read.read(args);

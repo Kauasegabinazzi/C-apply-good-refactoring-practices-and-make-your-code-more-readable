@@ -25,7 +25,7 @@ try
             break;
         case "show":
             var show = new show();
-            show.showImport(args: args[1]);
+            await show.ExeCutionAsync(args);
             break;
         case "list":
             var pets = new list();
