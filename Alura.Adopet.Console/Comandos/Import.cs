@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Alura.Adopet.Console.Modelos;
+using Alura.Adopet.Console.Util;
 
 namespace Alura.Adopet.Console.Comandos;
 
 [CommandDoc(instruction: "import", documentation: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]
 
-internal class Import
+internal class Import: IComando
 {
     HttpClient client;
 
@@ -21,7 +23,7 @@ internal class Import
 
     }
 
-    public async Task ImportFilePetAsync(string path)
+    private async Task ImportFilePetAsync(string path)
     {
 
         List<Pet> listaDePet = new List<Pet>();
@@ -61,6 +63,11 @@ internal class Import
             new MediaTypeWithQualityHeaderValue("application/json"));
         _client.BaseAddress = new Uri(url);
         return _client;
+    }
+
+    public async Task ExeCutionAsync(string[] args)
+    {
+        await this.ImportFilePetAsync(path: args[1]);
     }
 }
 

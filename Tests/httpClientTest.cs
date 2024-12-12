@@ -1,4 +1,5 @@
 using Alura.Adopet.Console;
+using Alura.Adopet.Console.Servicos;
 using Xunit;
 
 namespace Tests

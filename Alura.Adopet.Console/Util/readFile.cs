@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Alura.Adopet.Console.Modelos;
 
-namespace Alura.Adopet.Console
+namespace Alura.Adopet.Console.Util
 {
     internal class readFile
     {

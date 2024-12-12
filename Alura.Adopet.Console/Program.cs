@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Alura.Adopet.Console.Comandos;
 using Alura.Adopet.Console.Modelos;
 
 // cria instância de HttpClient para consumir API Adopet
@@ -16,7 +17,7 @@ try
     {
         case "import":
             var import = new Import();
-            await import.ImportFilePetAsync(path: args[1]);
+            await import.ExeCutionAsync(args);
             break;
         case "help":
             var help = new Help();

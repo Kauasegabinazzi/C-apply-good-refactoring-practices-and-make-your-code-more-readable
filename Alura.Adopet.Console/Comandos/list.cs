@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Alura.Adopet.Console.Modelos;
+using Alura.Adopet.Console.Servicos;
 
 namespace Alura.Adopet.Console.Comandos
 {
