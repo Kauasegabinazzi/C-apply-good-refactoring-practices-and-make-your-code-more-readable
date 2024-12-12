@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using Alura.Adopet.Console;
+using Alura.Adopet.Console.Modelos;
 
 // cria instância de HttpClient para consumir API Adopet
 HttpClient client = ConfiguraHttpClient("http://localhost:5057");

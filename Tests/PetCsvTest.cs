@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Alura.Adopet.Console;
 using Xunit;
+using Alura.Adopet.Console.Modelos;
 
 namespace Tests
 {
