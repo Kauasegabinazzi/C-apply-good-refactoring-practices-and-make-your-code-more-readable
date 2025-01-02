@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using Alura.Adopet.Console.Comandos;
 using Alura.Adopet.Console.Modelos;
@@ -9,6 +10,14 @@ Console.ForegroundColor = ConsoleColor.Green;
 
 string command = args[0].Trim();
 string importPath = args[1];
+
+Dictionary<string, IComando> comands = new()
+{
+    {"help", new Help() },
+    {"list", new list() },
+    {"import", new Import() },
+    {"show", new show() }
+};
 
 try
 {
