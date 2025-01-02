@@ -21,30 +21,41 @@ Dictionary<string, IComando> comands = new()
 
 try
 {
-    // args[0] é o comando a ser executado pelo programa
-    switch (command)
+    if (comands.ContainsKey(command))
     {
-        case "import":
-            var import = new Import();
-            await import.ExeCutionAsync(args);
-            break;
-        case "help":
-            var help = new Help();
-            help.ShowHelpList(path: args);
-            break;
-        case "show":
-            var show = new show();
-            await show.ExeCutionAsync(args);
-            break;
-        case "list":
-            var pets = new list();
-            await pets.ListaDadosPetsDaAPIAsync();
-            break;
-        default:
-            // exibe mensagem de comando inválido
-            Console.WriteLine("Comando inválido!");
-            break;
+        IComando? cmd = comands[command];
+        await cmd.ExeCutionAsync(args);
     }
+    else
+    {
+        Console.WriteLine("comando invalido");
+    }
+
+
+    //// args[0] é o comando a ser executado pelo programa
+    //switch (command)
+    //{
+    //    case "import":
+    //        var import = new Import();
+    //        await import.ExeCutionAsync(args);
+    //        break;
+    //    case "help":
+    //        var help = new Help();
+    //        help.ShowHelpList(path: args);
+    //        break;
+    //    case "show":
+    //        var show = new show();
+    //        await show.ExeCutionAsync(args);
+    //        break;
+    //    case "list":
+    //        var pets = new list();
+    //        await pets.ListaDadosPetsDaAPIAsync();
+    //        break;
+    //    default:
+    //        // exibe mensagem de comando inválido
+    //        Console.WriteLine("Comando inválido!");
+    //        break;
+    //}
 }
 catch (Exception ex)
 {
